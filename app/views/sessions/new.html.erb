@@ -1,8 +1,14 @@
 <h1>Login</h1>
 
-<%= form_tag '/login' do %>
-
-  Email: <%= text_field_tag :email %>
-  Password: <%= password_field_tag :password %>
-  <%= submit_tag "Submit" %>
+<%= form_tag '/login', class: "login" do %>
+  <div class="form-group">
+    <label for="exampleInputEmail1">Email address</label>
+    <%= text_field_tag :email, "", class: "form-control" %>
+    <small id="emailHelp" class="form-text text-muted">Your information is safe and will not be shared.</small>
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Password</label>
+    <%= password_field_tag :password, "", class: "form-control" %>
+  </div>
+  <%= submit_tag "Submit", class:"btn btn-primary"%>
 <% end %>
